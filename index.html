@@ -4,9 +4,11 @@
             EXPERIMENT
         </title>
         <script>
-            document.addEventListener("mousemove", function(event){
-                document.querySelector(".outer").style.top = document.querySelector(".inner").style.top =event.clientY;
-                document.querySelector(".outer").style.left = document.querySelector(".inner").style.left =event.clientX;
+            "mousemove touchmove".split(" ").forEach(function(e){
+                document.addEventListener(e, function(event){
+                    document.querySelector(".outer").style.top = document.querySelector(".inner").style.top =event.clientY;
+                    document.querySelector(".outer").style.left = document.querySelector(".inner").style.left =event.clientX;
+                });
             });
         </script>
         <style>
