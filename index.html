@@ -4,12 +4,11 @@
             EXPERIMENT
         </title>
         <script>
-            "mousemove touchmove".split(" ").forEach(function(e){
-                document.addEventListener(e, function(event){
+                document.addEventListener("pointermove", function(event){
+                    event.preventDefault;
                     document.querySelector(".outer").style.top = document.querySelector(".inner").style.top =event.clientY;
                     document.querySelector(".outer").style.left = document.querySelector(".inner").style.left =event.clientX;
                 });
-            });
         </script>
         <style>
             .outer {
@@ -46,11 +45,10 @@
         </style>
     </head>
     <body bgcolor="rgba(1,1,1)">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
         <div id="entire">
             <span style="color: white;">Click anywhere
         <div class="outer"></div>
-        <div class="inner" v-on:click="scatter($event)"></div>
+        <div class="inner" onclick="scatter(event)"></div>
         </div>
         <script src="main.js">
         </script>
