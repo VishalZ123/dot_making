@@ -3,12 +3,14 @@
         <title>
             EXPERIMENT
         </title>
-        <script>
-                document.addEventListener("pointermove", function(event){
+        <script>            
+            ["pointermove" , "touchmove"].forEach( function(e) {
+                document.addEventListener(e, function(event){
                     event.preventDefault;
                     document.querySelector(".outer").style.top = document.querySelector(".inner").style.top =event.clientY;
                     document.querySelector(".outer").style.left = document.querySelector(".inner").style.left =event.clientX;
                 });
+            });
         </script>
         <style>
             .outer {
